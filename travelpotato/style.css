@@ -340,7 +340,7 @@ section#attractions .block {
   display: inline-block;
   vertical-align: top;
   box-shadow: 0px 1px 3px;
-  background-color: rgba(0,0,0,0.3)
+  background-color: rgba(#141412,0.3);
   background-size: cover;
   background-position: center center;
   cursor: pointer;
