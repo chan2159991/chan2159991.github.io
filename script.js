@@ -13,11 +13,11 @@ $("navbar.navbar").on('click', 'a', function(event){
 // 控制navbar
 $(window).scroll(function(){
   if($(window).scrollTop()>0){
-    $("navbar.navbar, header h5").removeClass("at_top")
+    $("navbar.navbar, header h5, .block_container").removeClass("at_top")
   }else if($(window).scrollTop()==0 && clicknum%2!=0){
     $("navbar.navbar, header h5").removeClass("at_top")
   }else{
-    $("navbar.navbar, header h5").addClass("at_top")
+    $("navbar.navbar, header h5, .block_container").addClass("at_top")
   }
 })
 
@@ -60,19 +60,19 @@ $(window).mousemove(function(evt){
     $("img.up").css("opacity",0)
   })
   
-  $(".floatpic .block1").css("transform","translateX("+x/100+"px)")
-  $(".floatpic .block2").css("transform","translateY("+x/90+"px)")
-  $(".floatpic .block3").css("transform","translateX("+x/-70+"px)")
-  $(".floatpic .block4").css("transform","translateX("+x/75+"px)")
-  $(".floatpic .block5").css("transform","translateY("+x/85+"px)")
-  $(".floatpic .block6").css("transform","translateY("+x/-90+"px)")
-  $(".floatpic .block7").css("transform","translateX("+x/100+"px)")
+  $(".block_container .block1").css("transform","rotate(40deg) translateX("+x/100+"px)")
+  $(".block_container .block2").css("transform","rotate(40deg) translateY("+x/90+"px)")
+  $(".block_container .block3").css("transform","rotate(40deg) translateX("+x/-70+"px)")
+  $(".block_container .block4").css("transform","rotate(40deg) translateX("+x/75+"px)")
+  $(".block_container .block5").css("transform","rotate(40deg) translateY("+x/85+"px)")
+  $(".block_container .block6").css("transform","rotate(40deg) translateY("+x/-90+"px)")
+  $(".block_container .block7").css("transform","rotate(40deg) translateX("+x/100+"px)")
   
   $("section#attractions img.margin").css("transform","translateY("+x/-90+"px)")
 })
 
 // CREA載入name&url
-var creatordata=[{name:"Celine and Cynthia - 不只是旅行",imgurl:"https://github.com/chan2159991/travelpotato/blob/main/img/creator_picture1.jpg?raw=true",channel:"https://www.youtube.com/channel/UCtDL1RpW8r_Fg7D0aoFAqQw/featured"},{name:"Aiky一點GO愛旅遊",imgurl:"https://github.com/chan2159991/travelpotato/blob/main/img/creator_picture2.jpg?raw=true",channel:"https://www.youtube.com/channel/UCqDD7eYOdfFzVULKtJ4CZKA"},{name:"肉比頭Zoebitalk",imgurl:"https://github.com/chan2159991/travelpotato/blob/main/img/creator_picture3.jpg?raw=true",channel:"https://www.youtube.com/c/Zoebitalk"}]
+var creatordata=[{name:"Celine's Way 不只是旅行",imgurl:"https://github.com/chan2159991/travelpotato/blob/main/img/creator_picture1.png?raw=true",channel:"https://www.youtube.com/channel/UCtDL1RpW8r_Fg7D0aoFAqQw/featured"},{name:"Aiky一點GO瘋旅行",imgurl:"https://github.com/chan2159991/travelpotato/blob/main/img/creator_picture2.jpg?raw=true",channel:"https://www.youtube.com/channel/UCqDD7eYOdfFzVULKtJ4CZKA"},{name:"肉比頭Zoebitalk",imgurl:"https://github.com/chan2159991/travelpotato/blob/main/img/creator_picture3.jpg?raw=true",channel:"https://www.youtube.com/c/Zoebitalk"}]
 
 
 // ATTR載入JSON
@@ -163,9 +163,9 @@ function currentSlide(n){
 
 showslide(index)
 timer=setInterval('showslide(index+=1)',8000)
-$("#slideshow .mySlides, #slideshow a, .dots").mouseover(function(){
+$(".slideshow_container .mySlides, .slideshow_container a, .dots").mouseover(function(){
   clearInterval(timer)
 })
-$("#slideshow .mySlides, #slideshow a, .dots").mouseout(function(){
+$(".slideshow_container .mySlides, .slideshow_container a, .dots").mouseout(function(){
   timer=setInterval('showslide(index+=1)',8000)
 })
